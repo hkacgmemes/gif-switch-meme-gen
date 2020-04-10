@@ -79,35 +79,23 @@
 	<script src="./html2canvas.min.js"></script>
 	<script src="./FileSaver.min.js"></script>
 	<script>
-		const sauce = document.querySelector("img#sauce");
 		const canvas = document.querySelector("canvas#testCanvas");
 		const ctx = canvas.getContext("2d");
-
-		sauce.addEventListener("load", () => {
-			ctx.fillStyle = "#ccc";
-			ctx.fillRect(0, 0, 1280, 720);
-			ctx.fillStyle = "#fff";
-			ctx.font = "72px Arial";
-			ctx.textAlign = "center";
-			ctx.fillText("🤔", canvas.width / 2, canvas.height / 2 + 30);
-		});
-
-		// ===
-
+		
 		const input = document.querySelector("input#file-in");
 		input.value = "";
 
 		input.addEventListener("change", () => {
 			const file = input.files[0];
-		const fr = new FileReader();
-		fr.addEventListener("load", () => {
-			const img = new Image();
-			img.addEventListener("load", () => {
-				ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+			const fr = new FileReader();
+			fr.addEventListener("load", () => {
+				const img = new Image();
+				img.addEventListener("load", () => {
+					ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+				});
+				img.src = fr.result;
 			});
-			img.src = fr.result;
-		});
-		fr.readAsDataURL(file);
+			fr.readAsDataURL(file);
 		});
 
 		// ===
