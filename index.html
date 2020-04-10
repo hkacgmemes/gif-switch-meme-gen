@@ -1,0 +1,125 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Gifbb 迫害各種遊戲生成器</title>
+	<meta name="description" content="是但啦">
+	<meta name="author" content="是但啦">
+	<style>
+		body {
+			text-align: center;
+			background: url("./acg_is_not_fk_politics.jpg");
+		}
+
+		input, button {
+			font-size: 2em;
+			padding: .5em 1em;
+		}
+
+		p {
+			padding: .25em;
+		}
+
+		p > span {
+			background-color: rgba(255,255,255,.5);
+			text-shadow: 0 0 2px white;
+		}
+
+		#drawer {
+			display: inline-block;
+			width: 800px;
+			height: 600px;
+			position: relative;
+		}
+
+		#drawer > * {
+			display: block;
+		}
+
+		#drawer #testCanvas {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			width: 1280px;
+			height: 720px;
+
+  			transform: matrix3d(0.325, -0.01, 0, 0.000005, 0.01, 0.325, 0, 0, 0, 0, 1, 0, -382, 73, 0, 1);
+  			transform-style: preserve-3d; 
+		}
+	</style>
+</head>
+
+<body>
+	<p>
+	<input id="file-in" type="file" />
+	</p>
+	<div id="drawer">
+		<img id="sauce" src="sauce.jpg" />
+		<canvas id="testCanvas" />
+	</div>
+	<p>
+	<button id="save">出圖</button>
+	</p>
+	<p>
+		<span>
+			p.s.: <a href="https://www.facebook.com/photo?fbid=135406044710731&set=a.112000770384592" target="_blank">ACG is not *uck 政治</a>你個頭
+		</span>
+	</p>
+	<p>
+		<span>
+			created by 相馬<br/>
+			with ideas from 
+			<a href="https://github.com/shawtim" target="_blank">ShawTim</a>'s <a href="https://shawtim.github.io/mr-hong-is-so-right/" target="_blank">項生鬧得好寫得好生成器</a>
+		</span>
+	</p>
+
+	<script src="./html2canvas.min.js"></script>
+	<script src="./FileSaver.min.js"></script>
+	<script>
+		const sauce = document.querySelector("img#sauce");
+		const canvas = document.querySelector("canvas#testCanvas");
+		const ctx = canvas.getContext("2d");
+
+		sauce.addEventListener("load", () => {
+			ctx.fillStyle = "#ccc";
+			ctx.fillRect(0, 0, 1280, 720);
+			ctx.fillStyle = "#fff";
+			ctx.font = "72px Arial";
+			ctx.textAlign = "center";
+			ctx.fillText("🤔", canvas.width / 2, canvas.height / 2 + 30);
+		});
+
+		// ===
+
+		const input = document.querySelector("input#file-in");
+		input.value = "";
+
+		input.addEventListener("change", () => {
+			const file = input.files[0];
+		const fr = new FileReader();
+		fr.addEventListener("load", () => {
+			const img = new Image();
+			img.addEventListener("load", () => {
+				ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+			});
+			img.src = fr.result;
+		});
+		fr.readAsDataURL(file);
+		});
+
+		// ===
+
+		const saveBtn = document.querySelector("button#save");
+		const drawer = document.querySelector("#drawer");
+
+		saveBtn.addEventListener("click", () => {
+	    html2canvas(drawer, { scrollY: -window.scrollY }).then((canvas) => {
+	        canvas.toBlob((blob) => saveAs(blob, "gifbb又迫害咗一隻game.png"));
+	    });
+	});
+	</script>
+</body>
+</html>
