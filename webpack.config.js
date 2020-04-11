@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssUrlRelativePlugin = require("css-url-relative-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
 
-const outputPath = path.resolve(__dirname, 'out');
+const outputPath = path.resolve(__dirname, 'docs');
 
 let config = {
   entry: ['@babel/polyfill', './src/js/app.js'],

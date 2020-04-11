@@ -5,8 +5,8 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --host 0.0.0.0",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
-    "clean": "rm -rf out",
-    "deploy": "gh-pages -t -d out/ -b gh-pages"
+    "clean": "rm -rf docs",
+    "deploy": "gh-pages -t -d docs/ -b gh-pages"
   },
   "browserslist": [
     "defaults"
