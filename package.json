@@ -6,7 +6,8 @@
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "clean": "rm -rf docs",
-    "deploy": "gh-pages -t -d docs/ -b gh-pages"
+    "deploy": "git add . && git commit -m 是但啦 && git push origin master",
+    "diu": "yarn clean && yarn build && yarn deploy"
   },
   "browserslist": [
     "defaults"
@@ -47,6 +48,7 @@
   },
   "dependencies": {
     "file-saver": "^2.0.2",
-    "html2canvas": "^1.0.0-rc.5"
+    "html2canvas": "^1.0.0-rc.5",
+    "reset-css": "^5.0.1"
   }
 }
