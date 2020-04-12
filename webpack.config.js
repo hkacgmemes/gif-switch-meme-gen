@@ -68,6 +68,7 @@ let config = {
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',
+      favicon: './src/favicon.png',
     }),
     new MiniCssExtractPlugin({
       filename: 'static/css/[name].[hash:8].css',
