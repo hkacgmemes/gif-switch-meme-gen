@@ -10,7 +10,7 @@
     "export": "next export -o docs/",
     "start": "next start",
     "clean": "rm -rf .next docs",
-    "deploy": "git add . && git commit -m 是但啦 && git push origin master",
+    "deploy": "gh-pages -t -d docs",
     "diu": "yarn clean && yarn build && yarn export && yarn deploy"
   },
   "dependencies": {
@@ -26,6 +26,7 @@
     "reset-css": "^5.0.1"
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "url-loader": "^4.1.0"
   }
 }
