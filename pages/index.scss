@@ -25,10 +25,10 @@ p {
 }
 
 .app {
-	width: 800px;
 	margin: 1em 0;
 
     @media screen and (max-width: 800px) {
+        width: 800px;
         font-size: 2em;
     }
 }

@@ -69,10 +69,10 @@ p {
     text-shadow: 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 5px white; }
 
 .app {
-  width: 800px;
   margin: 1em 0; }
   @media screen and (max-width: 800px) {
     .app {
+      width: 800px;
       font-size: 2em; } }
 
 .item-switcher {
