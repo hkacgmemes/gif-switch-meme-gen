@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 		html2canvas(drawer, { scrollY: -window.scrollY })
 			.then(canvas => {
 				otherDivs.forEach(div => div.style.display = "");
-				canvas.toBlob(blob => FileSaver.saveAs(blob, "gifbb又迫害咗一隻game.jpg"), .95);
+				canvas.toBlob(blob => FileSaver.saveAs(blob, "gifbb又迫害咗一隻game.jpg"), "image/jpeg", .9);
 			});
 	});
 	
