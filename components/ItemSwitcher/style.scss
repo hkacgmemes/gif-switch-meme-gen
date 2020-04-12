@@ -1,0 +1,9 @@
+.item-switcher {
+	font-size: 1.5em;
+	> li {
+		display: inline-block;
+		&:not(:first-child) {
+			margin-left: 1em;
+		}
+	}
+}

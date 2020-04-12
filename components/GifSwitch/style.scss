@@ -1,0 +1,23 @@
+.drawer.switch {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 800px;
+    height: 600px;
+    position: relative;
+
+    > * {
+        display: block;
+    }
+
+    > .shaped-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1280px;
+        height: 720px;
+        /* https://codepen.io/vccodepen/pen/ewyJbM */
+        transform: matrix3d(0.325, -0.01, 0, 0.000005, 0.01, 0.325, 0, 0, 0, 0, 1, 0, -382, 73, 0, 1);
+        transform-style: preserve-3d;
+    }
+}

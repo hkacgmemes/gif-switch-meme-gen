@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+}
+
+input, button {
+    font-size: 1.5em;
+    padding: .5em 1em;
+}
+
+p {
+    padding: .5em;
+
+    > span {
+        background-color: rgba(255, 255, 255, 0.5);
+        text-shadow: 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 5px white;
+    }
+}
+
+.app {
+	margin: 1em 0;
+}

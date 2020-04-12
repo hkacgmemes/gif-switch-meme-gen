@@ -1,54 +1,31 @@
 {
   "name": "gif-switch-meme-gen",
   "version": "0.1.0",
-  "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --host 0.0.0.0",
-    "dev": "cross-env NODE_ENV=development webpack --mode development",
-    "build": "cross-env NODE_ENV=production webpack --mode production",
-    "clean": "rm -rf docs",
-    "deploy": "git add . && git commit -m 是但啦 && git push origin master",
-    "diu": "yarn clean && yarn build && yarn deploy"
-  },
-  "browserslist": [
-    "defaults"
-  ],
+  "private": true,
   "author": "souma",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/polyfill": "^7.8.7",
-    "@babel/preset-env": "^7.9.5",
-    "autoprefixer": "^9.7.6",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^8.1.0",
-    "babel-preset-env": "^1.6.1",
-    "copy-webpack-plugin": "^5.1.1",
-    "cross-env": "^7.0.2",
-    "css-loader": "^3.5.2",
-    "css-url-relative-plugin": "^1.0.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-loader": "^2.0.0",
-    "eslint-plugin-import": "^2.9.0",
-    "fibers": "^4.0.2",
-    "file-loader": "^1.1.11",
-    "gh-pages": "^2.2.0",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.1.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.13.1",
-    "postcss-loader": "^2.1.3",
-    "sass": "^1.26.3",
-    "sass-loader": "^8.0.2",
-    "style-loader": "^1.1.3",
-    "url-loader": "^4.1.0",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.1.1"
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export -o docs/",
+    "start": "next start",
+    "clean": "rm -rf docs",
+    "deploy": "git add . && git commit -m 是但啦 && git push origin master",
+    "diu": "yarn clean && yarn build && yarn export && yarn deploy"
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
     "file-saver": "^2.0.2",
     "html2canvas": "^1.0.0-rc.5",
+    "next": "9.3.4",
+    "next-images": "^1.4.0",
+    "node-sass": "^4.13.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
     "reset-css": "^5.0.1"
+  },
+  "devDependencies": {
+    "url-loader": "^4.1.0"
   }
 }
