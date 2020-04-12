@@ -9,7 +9,7 @@
     "build": "next build",
     "export": "next export -o docs/",
     "start": "next start",
-    "clean": "rm -rf docs",
+    "clean": "rm -rf .next docs",
     "deploy": "git add . && git commit -m 是但啦 && git push origin master",
     "diu": "yarn clean && yarn build && yarn export && yarn deploy"
   },
