@@ -21,6 +21,7 @@ const Home = ({
         <title>{ Locales(lang)._name }</title>
         <meta name="description" content={ Locales(lang).whatever } />
         <meta name="author" content={ Locales(lang).whatever } />
+        <link rel="shortcut icon" type="image/png" href="./favicon.png" />
         <meta property="og:url" content="https://hkacgmemes.github.io/gif-switch-meme-gen/" />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={ Locales(lang)._name } />
