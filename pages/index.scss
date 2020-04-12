@@ -2,13 +2,21 @@ body {
     text-align: center;
 }
 
-input, button {
+@mixin ctrl($padSide: 0) {
     font-size: 1.5em;
-    padding: .5em 1em;
+    padding: .5em $padSide;
+}
+
+input {
+    @include ctrl();
+}
+
+button {
+    @include ctrl(1em);
 }
 
 p {
-    padding: .5em;
+    padding: .5em 0;
 
     > span {
         background-color: rgba(255, 255, 255, 0.5);
@@ -17,5 +25,10 @@ p {
 }
 
 .app {
+	width: 800px;
 	margin: 1em 0;
+
+    @media screen and (max-width: 800px) {
+        font-size: 2em;
+    }
 }

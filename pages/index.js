@@ -25,7 +25,7 @@ const Home = () => (
     <p>
       <span>
         created by 相馬<br/>
-        with ideas from 
+        with ideas from&nbsp;
         <a href="https://github.com/shawtim" target="_blank">ShawTim</a>'s <a href="https://shawtim.github.io/mr-hong-is-so-right/" target="_blank">項生鬧得好寫得好生成器</a>
       </span>
     </p>

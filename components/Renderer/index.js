@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { Fragment, useRef } from 'react';
 import { withRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 
@@ -49,7 +49,7 @@ const Drawer = ({ router }) => {
 	}
 
 	return (
-		<div className="renderer">
+		<Fragment>
 			<ItemSwitcher />
 			<p>
 		        <span>
@@ -62,7 +62,7 @@ const Drawer = ({ router }) => {
 		    <p>
 		    	<button id="save" onClick={saveImage}>出圖</button>
 		    </p>
-		</div>
+		</Fragment>
 	)
 };
 
