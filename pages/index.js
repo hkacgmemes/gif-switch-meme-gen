@@ -1,35 +1,56 @@
 import Head from 'next/head'
+import { withRouter } from 'next/router';
 
 import "./index.scss";
 
+import Locales from "../extra/i18n";
+import LanguageSwitcher from "../components/LanguageSwitcher/";
 import Renderer from "../components/Renderer/";
 
-const Home = () => (
-  <div className="app">
-    <Head>
-      <title>Gifbb 迫害各種遊戲生成器</title>
-      <meta name="description" content="是但啦" />
-      <meta name="author" content="是但啦" />
-      <meta property="og:url" content="https://hkacgmemes.github.io/gif-switch-meme-gen/" />
-      <meta property="og:type" content="article" />
-      <meta property="og:title" content="Gifbb 迫害各種遊戲生成器" />
-      <meta property="og:description" content="是但啦" />
-      <meta property="og:image" content="./preview.jpg" />
-    </Head>
-    <Renderer />
-    <p>
-      <span>
-        p.s.: <a href="https://www.facebook.com/photo?fbid=135406044710731&set=a.112000770384592" target="_blank">ACG is not *uck 政治</a>你個頭
-      </span>
-    </p>
-    <p>
-      <span>
-        created by 相馬<br/>
-        with ideas from&nbsp;
-        <a href="https://github.com/shawtim" target="_blank">ShawTim</a>'s <a href="https://shawtim.github.io/mr-hong-is-so-right/" target="_blank">項生鬧得好寫得好生成器</a>
-      </span>
-    </p>
-  </div>
-)
+const Home = ({
+  router: {
+    query: {
+      lang = "hk",
+    }
+  }
+}) => {
 
-export default Home;
+  return (
+    <div className="app">
+      <Head>
+        <title>{ Locales(lang)._name }</title>
+        <meta name="description" content={ Locales(lang).whatever } />
+        <meta name="author" content={ Locales(lang).whatever } />
+        <meta property="og:url" content="https://hkacgmemes.github.io/gif-switch-meme-gen/" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={ Locales(lang)._name } />
+        <meta property="og:description" content={ Locales(lang).whatever } />
+        <meta property="og:image" content="./preview.jpg" />
+      </Head>
+      <LanguageSwitcher />
+      <Renderer />
+      <p>
+        <span>
+          p.s.:&nbsp;
+          <a href="https://www.facebook.com/photo?fbid=135406044710731&set=a.112000770384592" target="_blank">
+            { Locales(lang).acgIsNotFuckPolitics }
+          </a>
+          { Locales(lang).urHead }
+        </span>
+      </p>
+      <p>
+        <span>
+          { Locales(lang).createdBy }<br/>
+          { Locales(lang).withIdeasFrom }&nbsp;
+          <a href="https://github.com/shawtim" target="_blank">ShawTim's</a>
+          &nbsp;
+          <a href="https://shawtim.github.io/mr-hong-is-so-right/" target="_blank">
+            { Locales(lang).mrHonTool }
+          </a>
+        </span>
+      </p>
+    </div>
+  );
+};
+
+export default withRouter(Home);

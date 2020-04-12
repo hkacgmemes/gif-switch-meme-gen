@@ -68,14 +68,23 @@ p {
     background-color: rgba(255, 255, 255, 0.5);
     text-shadow: 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 5px white; }
 
-.app {
-  margin: 1em 0; }
-  @media screen and (max-width: 800px) {
-    .app {
-      width: 800px;
-      font-size: 2em; } }
+@media screen and (max-width: 800px) {
+  .app {
+    width: 800px;
+    font-size: 2em; } }
+
+.lang-switcher {
+  display: block;
+  margin: .5em 0;
+  font-size: 1.5em; }
+  .lang-switcher > li {
+    display: inline-block; }
+    .lang-switcher > li:not(:first-child) {
+      margin-left: 1em; }
 
 .item-switcher {
+  display: block;
+  margin: .5em 0;
   font-size: 1.5em; }
   .item-switcher > li {
     display: inline-block; }
