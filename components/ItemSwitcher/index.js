@@ -1,14 +1,21 @@
-import "./style.scss"
+import "./style.scss";
 
-import Router from 'next/router'
+import Link from 'next/link';
+import { withRouter } from 'next/router';
 
-export default () => (
+const ItemSwitcher = ({ router: { query } }) => (
 	<ul className="item-switcher">
 		<li>
-			<a href="?item=switch">Switch</a>
+			<Link href={{ query: { ...query, item: "switch" }}}>
+				<a>Switch</a>
+			</Link>
 		</li>
 		<li>
-			<a href="?item=iphone">iPhone</a>
+			<Link href={{ query: { ...query, item: "iphone" }}}>
+				<a>iPhone</a>
+			</Link>
 		</li>
 	</ul>
 );
+
+export default withRouter(ItemSwitcher);
