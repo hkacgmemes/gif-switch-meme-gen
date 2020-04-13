@@ -5,7 +5,7 @@ import FileSaver from "file-saver";
 const html2canvas = process.browser ? require('html2canvas') : null;
 
 
-import Locales from "../../extra/i18n";
+import { getLocale } from "../../extra/i18n";
 import ItemSwitcher from "../ItemSwitcher/";
 import GifSwitch from "../GifSwitch/";
 import GifIPhone from "../GifIPhone/";
@@ -81,14 +81,14 @@ const Drawer = ({
 			<ItemSwitcher />
 			<p>
 		        <span>
-		        	{ Locales(lang).suggested } 1280 x 720, 24bit
+		        	{ getLocale(lang, "suggested") } 1280 x 720, 24bit
 		        </span>
 		        <br/>
 		        <input id="file-in" type="file" accept="image/*" onChange={sauceChg} ref={fileIn} />
 		    </p>
 		    { renderGifbb() }
 		    <p>
-		    	<button id="save" onClick={saveImage}>{ Locales(lang).output }</button>
+		    	<button id="save" onClick={saveImage}>{ getLocale(lang, "output") }</button>
 		    </p>
 		</Fragment>
 	)
