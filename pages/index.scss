@@ -24,9 +24,14 @@ p {
     }
 }
 
-.app {
+html, body, #__next, #app {
     @media screen and (max-width: 800px) {
         width: 800px;
-        font-size: 2em;
     }
 }
+
+// #app {
+//     @media screen and (max-width: 800px) {
+//         font-size: 2em;
+//     }
+// }

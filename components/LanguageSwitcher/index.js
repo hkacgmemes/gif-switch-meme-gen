@@ -7,7 +7,7 @@ import Locales from "../../extra/i18n";
 export default () => (
 	<ul className="lang-switcher">
 		{ Object.entries(Locales()).map(([k, v]) => (
-			<li>
+			<li key={k}>
 				<a href={`?lang=${k}`}>{ v._lang }</a>
 			</li>
 		)) }

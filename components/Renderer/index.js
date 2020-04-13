@@ -1,4 +1,4 @@
-import { Fragment, useRef } from 'react';
+import React, { Fragment, useRef } from 'react';
 import { withRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import FileSaver from "file-saver";
@@ -39,21 +39,41 @@ const Drawer = ({
 	}
 
 	function saveImage() {
-		html2canvas(drawer.current, { scrollY: -window.scrollY })
-			.then(canvas => 
-				canvas.toBlob(blob => FileSaver.saveAs(blob, "gifbb又迫害咗一隻game.jpg"), "image/jpeg", .9)
-			);
+		const otherDivs = document.querySelectorAll(".app > *:not(.drawer)");
+
+		otherDivs.forEach(e => e.style.display = "none");
+		html2canvas(
+			drawer.current,
+			{
+				scale: 1,
+				scrollY: -window.scrollY,
+			}
+		)
+			.then(canvas => {
+				otherDivs.forEach(e => e.style.display = "");
+				canvas.toBlob(blob => FileSaver.saveAs(blob, "gifbb又迫害咗一隻game.jpg"), "image/jpeg", .9);
+			});
+	}
+
+	function getDrawer(item) {
+		switch (`${item}`.toLowerCase()) {
+    		case "iphone":
+				return GifIPhone;
+    		case "switch":
+    		default:
+				return GifSwitch;
+    	}
 	}
 
 	function renderGifbb() {
-
-		switch (item) {
-    		case "iphone":
-				return (<GifIPhone drawer={drawer} canvas={canvas} />);
-    		case "switch":
-    		default:
-				return (<GifSwitch drawer={drawer} canvas={canvas} />);
-    	}
+		return React.createElement(
+			getDrawer(item),
+			{
+				id: "drawer",
+				drawer,
+				canvas,
+			}
+		);
 	}
 
 	return (

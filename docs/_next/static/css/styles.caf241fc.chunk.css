@@ -69,9 +69,8 @@ p {
     text-shadow: 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 5px white; }
 
 @media screen and (max-width: 800px) {
-  .app {
-    width: 800px;
-    font-size: 2em; } }
+  html, body, #__next, #app {
+    width: 800px; } }
 
 .lang-switcher {
   display: block;

@@ -16,7 +16,7 @@ const Home = ({
 }) => {
 
   return (
-    <div className="app">
+    <div id="app">
       <Head>
         <title>{ Locales(lang)._name }</title>
         <meta name="description" content={ Locales(lang).whatever } />
@@ -27,6 +27,7 @@ const Home = ({
         <meta property="og:title" content={ Locales(lang)._name } />
         <meta property="og:description" content={ Locales(lang).whatever } />
         <meta property="og:image" content="./preview.jpg" />
+        <meta name="viewport" content="width=device-width" />
       </Head>
       <LanguageSwitcher />
       <Renderer />
