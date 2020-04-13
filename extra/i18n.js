@@ -1,5 +1,6 @@
 const locales = {
 	hk: {
+		_lang: "香港",
 		_name: "Gifbb 迫害各種遊戲生成器",
 		whatever: "是但啦",
 		suggested: "建議",
@@ -7,20 +8,33 @@ const locales = {
 		acgIsNotFuckPolitics: "ACG is not *uck 政治",
 		urHead: "你個頭",
 		createdBy: "created by 相馬",
-		withIdeasFrom: "with ideas from ",
+		withIdeasFrom: "with ideas from",
 		mrHonTool: "項生鬧得好寫得好生成器",
 	},
+	es: {
+		_lang: "Español",
+		_name: "Joshua Wong acosar de varios generadores de juegos.",
+		whatever: "lo que sea",
+		suggested: "Sugirió: ",
+		output: "Hacer",
+		acgIsNotFuckPolitics: "ACG is not *uck política",
+		urHead: " es extraño",
+		createdBy: "created by Souma",
+		withIdeasFrom: "con ideas de",
+		mrHonTool: "El Sr. Xiang está bien y escribe bien generador",
+	},
 	th: {
+		_lang: "ไทย",
 		_name: "Joshua Wong การประหัตประหารเกมต่าง ๆเครื่องมือการผลิต",
 		whatever: "อะไรก็ตาม",
-		suggested: "แนะนำ",
+		suggested: "แนะนำ: ",
 		output: "สร้าง",
 		acgIsNotFuckPolitics: "ACG is not *uck การเมือง",
-		urHead: "แปลก",
+		urHead: " แปลก",
 		createdBy: "created by โสม",
-		withIdeasFrom: "ด้วยแนวคิดจาก ",
+		withIdeasFrom: "ด้วยแนวคิดจาก",
 		mrHonTool: "นายฮอนคำสาปได้ดีมากเขียนได้ดีมากสร้างเครื่องมือ",
 	},
 };
 
-module.exports = (locale) => locales[`${locale}`.toLowerCase()];
+module.exports = (locale) => locale ? locales[`${locale}`.toLowerCase()] : locales;
