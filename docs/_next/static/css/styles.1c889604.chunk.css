@@ -74,8 +74,7 @@ p {
 
 .lang-switcher {
   display: block;
-  margin: .5em 0;
-  font-size: 1.5em; }
+  margin: .5em 0; }
   .lang-switcher > li {
     display: inline-block; }
     .lang-switcher > li:not(:first-child) {
