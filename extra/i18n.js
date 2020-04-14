@@ -18,7 +18,7 @@ const locales = {
 	en: {
 		_lang: "English",
 		_name: "Gifbb (Joshua Wong) persecuting every game generator",
-		_out_filename: "joshua_presecuted_another_game",
+		_out_filename: "joshua_prosecuted_another_game",
 		whatever: "Whatever",
 		suggested: "Suggested: ",
 		output: "Generate",
@@ -53,6 +53,19 @@ const locales = {
 		createdBy: "สร้างโดย Souma (相馬)",
 		withIdeasFrom: "ด้วยแนวคิดจาก$2ของ $1",
 		mrHonTool: "นายฮอนคำสาปได้ดีมากเขียนได้ดีมากสร้างเครื่องมือ",
+	},
+	vn: {
+		_lang: "Tiếng Việt",
+		_name: "Máy phát điện Gifbb (Joshua Wong) bức hại mọi trò chơi",
+		_out_filename: "joshua_đã_truy_tố_một_trò_chơi_khác",
+		whatever: "Bất cứ điều gì",
+		suggested: "Đề xuất: ",
+		output: "Tạo",
+		acgIsNotFuckPolitics: "ACG is not *uck politics",
+		urHead: "$1 đổ lỗi",
+		createdBy: "được tạo bởi Souma (相馬)",
+		withIdeasFrom: "với ý tưởng từ $2 của $1",
+		mrHonTool: "Máy phát điện Ông Hon rất đúng khi đổ lỗi và viết về",
 	},
 };
 
