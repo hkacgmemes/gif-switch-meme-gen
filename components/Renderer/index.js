@@ -51,7 +51,7 @@ const Drawer = ({
 		)
 			.then(canvas => {
 				otherDivs.forEach(e => e.style.display = "");
-				canvas.toBlob(blob => FileSaver.saveAs(blob, "gifbb又迫害咗一隻game.jpg"), "image/jpeg", .9);
+				canvas.toBlob(blob => FileSaver.saveAs(blob, `${getLocale(lang, "_out_filename")}.jpg`), "image/jpeg", .9);
 			});
 	}
 
@@ -62,6 +62,16 @@ const Drawer = ({
     		case "switch":
     		default:
 				return GifSwitch;
+    	}
+	}
+
+	function getDrawerRecommendedResolution(item) {
+		switch (`${item}`.toLowerCase()) {
+    		case "iphone":
+    			return "2436x1125 or 19.5:9"
+    		case "switch":
+    		default:
+    			return "1280x720 or 16:9";
     	}
 	}
 
@@ -81,7 +91,7 @@ const Drawer = ({
 			<ItemSwitcher />
 			<p>
 		        <span>
-		        	{ getLocale(lang, "suggested") } 1280 x 720, 24bit
+		        	{ getLocale(lang, "suggested") } { getDrawerRecommendedResolution() }, 24bit
 		        </span>
 		        <br/>
 		        <input id="file-in" type="file" accept="image/*" onChange={sauceChg} ref={fileIn} />

@@ -5,6 +5,7 @@ const locales = {
 	hk: {
 		_lang: "香港",
 		_name: "Gifbb 迫害各種遊戲生成器",
+		_out_filename: "gifbb又迫害咗一隻game",
 		whatever: "是但啦",
 		suggested: "建議：",
 		output: "出圖",
@@ -17,6 +18,7 @@ const locales = {
 	en: {
 		_lang: "English",
 		_name: "Gifbb (Joshua Wong) persecuting every game generator",
+		_out_filename: "joshua_presecuted_another_game",
 		whatever: "Whatever",
 		suggested: "Suggested: ",
 		output: "Generate",
@@ -29,6 +31,7 @@ const locales = {
 	es: {
 		_lang: "Español",
 		_name: "Joshua Wong acosar de varios generadores de juegos.",
+		_out_filename: "joshua_persiguió_otro_juego",
 		whatever: "lo que sea",
 		suggested: "Sugirió: ",
 		output: "Hacer",
@@ -41,6 +44,7 @@ const locales = {
 	th: {
 		_lang: "ไทย",
 		_name: "Joshua Wong การประหัตประหารเกมต่าง ๆเครื่องมือการผลิต",
+		_out_filename: "joshua_รังแกเกมอื่น",
 		whatever: "อะไรก็ตาม",
 		suggested: "แนะนำ: ",
 		output: "สร้าง",
