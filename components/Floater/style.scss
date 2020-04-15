@@ -1,0 +1,19 @@
+.floater {
+	border: 1px #f00 solid;
+	
+	@media screen and (min-width: 1400px) {
+		width: 280px; // (800px + 280px * 2) = 1360px < 1400px
+		position: fixed;
+		top: 0;
+
+		&.left {
+			left: 0;
+			text-align: left;
+		}
+
+		&.right {
+			right: 0;
+			text-align: right;
+		}
+	}
+}
