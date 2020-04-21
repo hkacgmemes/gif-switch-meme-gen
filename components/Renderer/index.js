@@ -2,13 +2,15 @@ import React, { Fragment, useRef } from 'react';
 import { withRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import FileSaver from "file-saver";
-const html2canvas = process.browser ? require('html2canvas') : null;
+// const html2canvas = process.browser ? require('html2canvas') : null;
+const dom2image = process.browser ? require('dom-to-image') : null;
 
 
 import { getLocale } from "../../extra/i18n";
 import ItemSwitcher from "../ItemSwitcher/";
 import GifSwitch from "../GifSwitch/";
 import GifIPhone from "../GifIPhone/";
+import GifPc from "../GifPc/";
 
 const Drawer = ({
 	router: {
@@ -42,33 +44,46 @@ const Drawer = ({
 		const otherDivs = document.querySelectorAll(".app > *:not(.drawer)");
 
 		otherDivs.forEach(e => e.style.display = "none");
-		html2canvas(
-			drawer.current,
-			{
-				scale: 1,
-				scrollY: -window.scrollY,
-			}
-		)
-			.then(canvas => {
-				otherDivs.forEach(e => e.style.display = "");
-				canvas.toBlob(blob => FileSaver.saveAs(blob, `${getLocale(lang, "_out_filename")}.jpg`), "image/jpeg", .9);
-			});
+		// html2canvas(
+		// 	drawer.current,
+		// 	{
+		// 		scale: 1,
+		// 		scrollX: -window.scrollX,
+		// 		scrollY: -window.scrollY,
+		// 	}
+		// )
+		// 	.then(canvas => {
+		// 		otherDivs.forEach(e => e.style.display = "");
+		// 		canvas.toBlob(blob => FileSaver.saveAs(blob, `${getLocale(lang, "_out_filename")}.jpg`), "image/jpeg", .9);
+		// 	});
+
+		dom2image.toJpeg(drawer.current, {
+			quality: .9
+		})
+		    .then(function (dataUrl) {
+		    	FileSaver.saveAs(dataUrl, `${getLocale(lang, "_out_filename")}.jpg`);
+		        otherDivs.forEach(e => e.style.display = "");
+		    });
 	}
 
-	function getDrawer(item) {
+	function getDrawer() {
 		switch (`${item}`.toLowerCase()) {
     		case "iphone":
 				return GifIPhone;
+    		case "pc":
+				return GifPc;
     		case "switch":
     		default:
 				return GifSwitch;
     	}
 	}
 
-	function getDrawerRecommendedResolution(item) {
+	function getDrawerRecommendedResolution() {
 		switch (`${item}`.toLowerCase()) {
     		case "iphone":
     			return "2436x1125 or 19.5:9"
+    		case "pc":
+    			return "1920x1080 or 16:9"
     		case "switch":
     		default:
     			return "1280x720 or 16:9";

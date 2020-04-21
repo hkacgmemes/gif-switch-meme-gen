@@ -15,6 +15,11 @@ const ItemSwitcher = ({ router: { query } }) => (
 				<a>iPhone</a>
 			</Link>
 		</li>
+		<li>
+			<Link href={{ query: { ...query, item: "pc" }}}>
+				<a>PC</a>
+			</Link>
+		</li>
 	</ul>
 );
 

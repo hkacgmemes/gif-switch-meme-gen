@@ -1,0 +1,41 @@
+.drawer.pc {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 800px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+
+    > * {
+        display: block;
+    }
+
+    .testdiv {
+        border: 2px red solid;
+        background: rgba(0,224,255,.5);
+        width: 1920px;
+        height: 1080px;
+    }
+
+    > .shaped-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        transform: matrix3d(0.311209, 0.039323, 0, 0.000343576, 0.0700568, 0.310626, 0, 0.0000707551, 0, 0, 1, 0, -10, 122, 0, 1);
+        transform-origin: 0px 0px;
+        transform-style: preserve-3d;
+        image-rendering: optimizequality;
+        //filter: brightness(250%) contrast(125%) grayscale(50%) blur(1px) hue-rotate(-10deg);
+        z-index: -1;
+    }
+
+    > .base {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+}

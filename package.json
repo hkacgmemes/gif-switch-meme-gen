@@ -16,13 +16,14 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
+    "dom-to-image": "^2.6.0",
     "file-saver": "^2.0.2",
-    "html2canvas": "^1.0.0-rc.5",
     "next": "9.3.4",
     "next-images": "^1.4.0",
     "node-sass": "^4.13.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-mapping": "^0.0.1",
     "react-string-replace": "^0.4.4",
     "reset-css": "^5.0.1"
   },
