@@ -1,8 +1,8 @@
 import "reset-css";
-import rndBg from "../extra/rndBg";
+import randomBackgroundImage from "../extra/randomBackgroundImage";
 
 function MyApp({ Component, pageProps }) {
-	rndBg();
+	randomBackgroundImage();
   	return <Component {...pageProps} />;
 }
 
