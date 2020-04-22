@@ -1,1 +1,1 @@
-![](https://raw.githubusercontent.com/hkacgmemes/gif-switch-meme-gen/master/misc/redish_orient.jpg)
+![](https://raw.githubusercontent.com/hkacgmemes/gif-switch-meme-gen/master/extra/redish_orient.jpg)

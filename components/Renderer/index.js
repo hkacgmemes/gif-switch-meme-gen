@@ -44,18 +44,6 @@ const Drawer = ({
 		const otherDivs = document.querySelectorAll(".app > *:not(.drawer)");
 
 		otherDivs.forEach(e => e.style.display = "none");
-		// html2canvas(
-		// 	drawer.current,
-		// 	{
-		// 		scale: 1,
-		// 		scrollX: -window.scrollX,
-		// 		scrollY: -window.scrollY,
-		// 	}
-		// )
-		// 	.then(canvas => {
-		// 		otherDivs.forEach(e => e.style.display = "");
-		// 		canvas.toBlob(blob => FileSaver.saveAs(blob, `${getLocale(lang, "_out_filename")}.jpg`), "image/jpeg", .9);
-		// 	});
 
 		dom2image.toJpeg(drawer.current, {
 			quality: .9
@@ -70,23 +58,23 @@ const Drawer = ({
 		switch (`${item}`.toLowerCase()) {
     		case "iphone":
 				return GifIPhone;
-    		case "pc":
-				return GifPc;
     		case "switch":
-    		default:
 				return GifSwitch;
+    		case "pc":
+    		default:
+				return GifPc;
     	}
 	}
 
 	function getDrawerRecommendedResolution() {
 		switch (`${item}`.toLowerCase()) {
     		case "iphone":
-    			return "2436x1125 or 19.5:9"
-    		case "pc":
-    			return "1920x1080 or 16:9"
+    			return "2436x1125 or 19.5:9";
     		case "switch":
-    		default:
     			return "1280x720 or 16:9";
+    		case "pc":
+    		default:
+    			return "1920x1080 or 16:9";
     	}
 	}
 
