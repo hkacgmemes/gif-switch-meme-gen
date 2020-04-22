@@ -58,23 +58,23 @@ const Drawer = ({
 		switch (`${item}`.toLowerCase()) {
     		case "iphone":
 				return GifIPhone;
-    		case "switch":
-				return GifSwitch;
     		case "pc":
-    		default:
 				return GifPc;
+    		case "switch":
+    		default:
+				return GifSwitch;
     	}
 	}
 
 	function getDrawerRecommendedResolution() {
 		switch (`${item}`.toLowerCase()) {
     		case "iphone":
-    			return "2436x1125 or 19.5:9";
-    		case "switch":
-    			return "1280x720 or 16:9";
+    			return "2436x1125 or 19.5:9"
     		case "pc":
+    			return "1920x1080 or 16:9"
+    		case "switch":
     		default:
-    			return "1920x1080 or 16:9";
+    			return "1280x720 or 16:9";
     	}
 	}
 
