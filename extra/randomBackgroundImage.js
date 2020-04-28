@@ -68,6 +68,8 @@ export default function () {
 			require("./acg_is_not_fk_politics/64.gif"),
 			require("./acg_is_not_fk_politics/65.gif"),
 			require("./acg_is_not_fk_politics/66.gif"),
+			require("./acg_is_not_fk_politics/67.gif"),
+			require("./acg_is_not_fk_politics/68.gif"),
 		];
 		const randomBgIndex = parseInt(Math.random() * backgrounds.length);
 		document.body.style.background = `url(${backgrounds[randomBgIndex]})`;
